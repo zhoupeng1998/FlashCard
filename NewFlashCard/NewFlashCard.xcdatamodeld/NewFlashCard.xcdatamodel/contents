@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1712" minimumToolsVersion="Automatic">
+    <entity name="Card" representedClassName=".Card" syncable="YES">
+        <attribute name="cardDefinition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardTerm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="definitionImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="termImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="lists" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="cards" inverseEntity="List" syncable="YES"/>
+        <fetchedProperty name="folder" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Card"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="List" representedClassName=".List" syncable="YES">
+        <attribute name="listName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="lists" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="146"/>
+        <element name="List" positionX="250" positionY="26" width="128" height="73"/>
+    </elements>
+</model>
